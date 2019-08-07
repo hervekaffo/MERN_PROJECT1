@@ -1,4 +1,5 @@
 const express = require("express");
+const connectDB = require("./config/db");
 // const mongoose = require("mongoose");
 
 // const users = require("./routes/api/users");
@@ -7,6 +8,8 @@ const express = require("express");
 
 const app = express();
 
+//connect to the database
+connectDB();
 // DB Config
 // const db = require("./config/keys").mongoURI;
 
@@ -18,10 +21,13 @@ const app = express();
 
 app.get("/", (req, res) => res.send("API running"));
 
-// Use Routes
-/* app.use("/api/users", users);
-app.use("/api/profile", profile);
-app.use("/api/posts", posts); */
+// Define Routes
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/profile", require("./routes/api/profile"));
+app.use("/api/posts", require("./routes/api/posts"));
+//app.use("/api/profile", profile);
+//app.use("/api/posts", posts);
 
 const port = process.env.PORT || 5000;
 
