@@ -10,8 +10,9 @@ const app = express();
 
 //connect to the database
 connectDB();
-// DB Config
-// const db = require("./config/keys").mongoURI;
+
+//init the Middleware
+app.use(express.json({ extended: false }));
 
 // Connect to MongoDB
 // mongoose
