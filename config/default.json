@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://kaffo:mercure123@cluster0-ydfjt.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "0523334126512d8fa490",
+  "githubSecret": "158b4273b7010214cde7f8799afa01c6830982dd"
 }
